@@ -681,7 +681,7 @@ public:
 
         Ch const* r = traits_type::find( data() + pos, size() - pos, c );
 
-        return r? r - data(): npos;
+        return r? static_cast<size_t>(r - data()): npos;
     }
 
     BOOST_CXX14_CONSTEXPR size_type find( Ch const* s, size_type pos, size_type n ) const BOOST_NOEXCEPT
